@@ -1,0 +1,8 @@
+plotly 
+streamlit 
+matplotlib  
+pandas
+numpy
+geopy
+
+

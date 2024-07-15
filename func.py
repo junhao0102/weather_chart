@@ -127,4 +127,15 @@ def temperature_line_chart(weather_df):
         st.plotly_chart(fig)
 
 
+# ----處理按下Enter鍵事件----
+
+def handle_enter(search_loc, search_df):
+    if search_loc == "":
+        st.warning("⚠️ 不能為空")
+    elif search_loc not in search_df["Location"].unique():
+        st.warning("⚠️ 請輸入台北市區名稱")
+    else:
+        search_df = search_df[search_df["Location"] == search_loc]
+        temperature_line_chart(search_df)
+
     
